@@ -32,13 +32,13 @@ function delay(time) {
             // Use the default windows path for chrome exe - solves white window bug for windows
             executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
             // Start the browser in incognito mode
-            args: ['--incognito']
+            args: ['--incognito', '--no-sandbox']
         });
     } catch(e) {
          browser = await puppeteer.launch({
             headless: true, // Change to 'false' to see the browser actions for debugging
             // Start the browser in fullscreen and incognito mode
-            args: ['--start-fullscreen', '--incognito']
+            args: ['--start-fullscreen', '--incognito', '--no-sandbox']
         });
     }
 

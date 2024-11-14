@@ -20,9 +20,9 @@ function delay(time) {
     const orange = chalk.hex('#FFA500'); // Define a custom orange color
 	let browser;
 	try {
-    browser = await puppeteer.launch({ headless: true, executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', args: ['--incognito']});
+    browser = await puppeteer.launch({ headless: true, executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', args: ['--incognito', '--no-sandbox']});
 	} catch(e) {
-		browser = await puppeteer.launch({ headless: true, args: ['--incognito']});
+		browser = await puppeteer.launch({ headless: true, args: ['--incognito', '--no-sandbox']});
 	}
     const [page] = await browser.pages();
     const timeout = 30000;
